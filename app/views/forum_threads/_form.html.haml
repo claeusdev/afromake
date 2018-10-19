@@ -2,9 +2,6 @@
 	.form-group
 		= f.text_field :subject, placeholder: "Subject", class: 'form-control'
 	
-	= f.fields_for :posts do |p|
-
-		.form-group
-			= p.text_area :body, placeholder: "Add a post", rows: 10, class: "form-control"
+	
 	.form-group
 		= f.submit class: "btn btn-danger"

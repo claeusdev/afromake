@@ -1,4 +1,4 @@
-class ForumThreads::ForumPostsController < ApplicationController
+class ForumThreads::PostsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_thread
 
@@ -7,7 +7,7 @@ class ForumThreads::ForumPostsController < ApplicationController
     @post.user = current_user
 
     if @post.save
-      redirect_to forum_thread_path(@thread, anchor: "forum_post_#{@forum_post.id}"), notice: "Successfully posted!"
+      redirect_to forum_thread_path(@thread, anchor: "post_#{@post.id}"), notice: "Successfully posted!"
     else
       redirect_to @thread, alert: "Unable to save your post"
     end
@@ -16,7 +16,7 @@ class ForumThreads::ForumPostsController < ApplicationController
   private
 
     def set_thread
-      @thread = ForumThread.find(params[:thread_id])
+      @thread = ForumThread.find(params[:forum_thread_id])
     end
 
     def post_params

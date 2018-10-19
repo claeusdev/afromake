@@ -1,6 +1,2 @@
 = @thread.subject
-
-- @thread.posts.each do |p|
-
-	= p.body
-	= p.user.email
+= render @posts

@@ -19,6 +19,9 @@ gem 'devise'
 gem 'bootstrap'
 gem 'bourbon'
 gem 'haml-rails'
+gem 'record_tag_helper', '~> 1.0'
+
+
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -32,6 +35,7 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'annotate'
+
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

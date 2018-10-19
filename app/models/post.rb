@@ -23,4 +23,16 @@
 class Post < ApplicationRecord
   belongs_to :forum_thread
   belongs_to :user
+
+  validates :body, presence: true
+
+
+  def send_notification
+  	users = forum_thread.users.uniq - [user]
+
+  	users.each do |user|
+  		raise "its in here"
+  		NotificationMailer.post_notification(user, self).deliver_later
+  	end
+  end
 end

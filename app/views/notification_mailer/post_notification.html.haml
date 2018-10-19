@@ -1,0 +1,3 @@
+%h2= link_to "A new post has been added to #{post.forum_thread.subject}"
+
+%p= link_to "Read and add your comment", forum_thread_url(@post.forum_thread, anchor: dom_id(@post))

@@ -1,6 +1,10 @@
-= @thread.subject
-= render @posts
 
-%hr/
+.container.mt-5
+    .row.justify-content-center
+        .col-sm-8
+            %h1= @thread.subject
+            = render @posts
 
-= render partial: "posts/form"
+            %hr/
+
+            = render partial: "posts/form"

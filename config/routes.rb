@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'user/show'
   devise_for :users
 
 
@@ -8,6 +7,6 @@ Rails.application.routes.draw do
   	resources :posts, module: :forum_threads
   end
 
-
+  resources :user, only: [:show]
   root 'pages#index'
 end

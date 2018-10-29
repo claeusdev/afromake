@@ -3,11 +3,14 @@
 # Table name: users
 #
 #  id                     :bigint(8)        not null, primary key
+#  bio                    :text
 #  email                  :string           default(""), not null
 #  encrypted_password     :string           default(""), not null
+#  location               :string
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string
+#  twitter_handle         :string
 #  username               :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null

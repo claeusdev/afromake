@@ -6,4 +6,7 @@ Rails.application.routes.draw do
   resources	:forum_threads do
   	resources :posts, module: :forum_threads
   end
+
+
+  root 'pages#index'
 end

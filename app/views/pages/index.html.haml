@@ -1,0 +1,16 @@
+.container-fluid
+    .row
+        .col-sm-6
+            %h1 Welcome to Afromakers.
+            %p We're a community of designers and developers coming together to build and discover great products.
+            
+            - if user_signed_in?
+
+            - else 
+                = button_to "Join Us", new_user_registration_path, method: :get, class: 'btn btn-primary'
+        .col-sm-6
+
+            %h3 Just in ... 
+            - @threads.each do |thread|
+
+                %p= link_to thread.subject, thread
